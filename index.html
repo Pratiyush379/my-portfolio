@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pratiyush | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+
+--bg:#050505;
+--glass:rgba(255,255,255,.06);
+--border:rgba(255,255,255,.10);
+
+--white:#fff;
+--text:#bdbdbd;
+
+--blue:#4facfe;
+--purple:#8b5cf6;
+
+}
+
+body{
+
+background:var(--bg);
+
+color:var(--white);
+
+overflow-x:hidden;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:450px;
+height:450px;
+
+left:-200px;
+top:-200px;
+
+background:#4facfe;
+
+filter:blur(170px);
+
+opacity:.15;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:450px;
+height:450px;
+
+right:-200px;
+bottom:-200px;
+
+background:#8b5cf6;
+
+filter:blur(170px);
+
+opacity:.15;
+
+z-index:-2;
+
+}
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(var(--blue),var(--purple));
+
+border-radius:50px;
+
+}
+
+header{
+
+position:fixed;
+
+width:100%;
+
+top:20px;
+
+left:0;
+
+padding:0 7%;
+
+z-index:1000;
+
+}
+
+nav{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:16px 30px;
+
+border-radius:20px;
+
+background:var(--glass);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(18px);
+
+}
+
+.logo{
+
+font-size:1.7rem;
+
+font-weight:700;
+
+background:linear-gradient(45deg,var(--blue),var(--purple));
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:var(--blue);
+
+}
+
+section{
+
+padding:120px 8%;
+
+}
+section{
+padding:120px 8%;
+}
+.hero{
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+align-items:center;
+
+min-height:100vh;
+
+gap:70px;
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:rgba(79,172,254,.15);
+
+border:1px solid rgba(79,172,254,.30);
+
+border-radius:40px;
+
+color:var(--blue);
+
+margin-bottom:22px;
+
+}
+
+.hero h1{
+
+font-size:4.8rem;
+
+line-height:1.05;
+
+margin-bottom:18px;
+
+}
+
+.hero h1 span{
+
+background:linear-gradient(45deg,var(--blue),var(--purple));
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero h2{
+
+font-weight:400;
+
+color:var(--text);
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+max-width:620px;
+
+line-height:1.9;
+
+color:var(--text);
+
+margin-bottom:35px;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+display:inline-block;
+
+padding:14px 30px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.primary{
+
+background:linear-gradient(45deg,var(--blue),var(--purple));
+
+color:white;
+
+}
+
+.secondary{
+
+background:var(--glass);
+
+border:1px solid var(--border);
+
+color:white;
+
+}
+
+.btn:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 15px 35px rgba(79,172,254,.25);
+
+}
+
+.photo{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.circle{
+
+width:340px;
+
+height:340px;
+
+border-radius:50%;
+
+background:var(--glass);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(18px);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:6rem;
+
+box-shadow:0 0 40px rgba(79,172,254,.18);
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:2.5rem;
+
+margin-bottom:45px;
+
+}
+
+.card{
+
+max-width:950px;
+
+margin:auto;
+
+padding:40px;
+
+border-radius:24px;
+
+background:var(--glass);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(18px);
+
+}
+
+.card p{
+
+line-height:1.9;
+
+color:var(--text);
+
+}
+/* ===== Skills ===== */
+
+.skills-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.skill-card{
+
+background:var(--glass);
+
+border:1px solid var(--border);
+
+border-radius:22px;
+
+padding:30px;
+
+backdrop-filter:blur(18px);
+
+transition:.35s;
+
+}
+
+.skill-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 30px rgba(79,172,254,.18);
+
+border-color:rgba(79,172,254,.35);
+
+}
+
+.skill-card h3{
+
+font-size:1.4rem;
+
+margin-bottom:18px;
+
+color:var(--blue);
+
+}
+
+.skill-card ul{
+
+list-style:none;
+
+line-height:2;
+
+color:var(--text);
+
+}
+
+/* ===== Projects ===== */
+
+.project-card{
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+background:var(--glass);
+
+padding:45px;
+
+border-radius:25px;
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(18px);
+
+}
+
+.project-card h3{
+
+font-size:2rem;
+
+margin-bottom:20px;
+
+}
+
+.project-card p{
+
+color:var(--text);
+
+line-height:1.9;
+
+max-width:700px;
+
+margin:auto auto 35px;
+
+}
+
+/* ===== Contact ===== */
+
+.contact-card{
+
+max-width:800px;
+
+margin:auto;
+
+text-align:center;
+
+background:var(--glass);
+
+padding:45px;
+
+border-radius:25px;
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(18px);
+
+}
+
+.contact-card p{
+
+margin:15px 0;
+
+}
+
+.contact-card a{
+
+color:white;
+
+text-decoration:none;
+
+}
+
+.social{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+.social a{
+
+padding:12px 25px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid var(--border);
+
+transition:.3s;
+
+}
+
+.social a:hover{
+
+background:linear-gradient(45deg,var(--blue),var(--purple));
+
+}
+
+/* ===== Footer ===== */
+
+footer{
+
+padding:45px;
+
+text-align:center;
+
+color:#8d8d8d;
+
+}
+
+/* ===== Responsive ===== */
+
+@media(max-width:900px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+gap:50px;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+.hero p{
+
+margin:auto auto 35px;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+.circle{
+
+width:240px;
+
+height:240px;
+
+font-size:4rem;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:18px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+section{
+
+padding:90px 6%;
+
+}
+
+.hero h1{
+
+font-size:2.4rem;
+
+}
+
+.title{
+
+font-size:2rem;
+
+}
+
+.btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+Pratiyush
+
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+<div>
+
+<div class="badge">
+
+Aspiring Software Developer
+
+</div>
+
+<h1>
+
+Hi,<br>
+
+I'm <span>Pratiyush</span>
+
+</h1>
+
+<h2>
+
+Building software with passion.
+
+</h2>
+
+<p>
+
+I'm passionate about building software, learning modern technologies, and continuously improving my problem-solving skills through consistent practice and real-world projects.
+
+</p>
+
+<div class="buttons">
+
+<a href="#projects" class="btn primary">
+
+View Projects
+
+</a>
+
+<a href="#contact" class="btn secondary">
+
+Contact Me
+
+</a>
+
+</div>
+
+</div>
+
+<div class="photo">
+
+<div class="circle">
+
+👨‍💻
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<h2 class="title">
+
+About Me
+
+</h2>
+
+<div class="card">
+
+<p>
+
+Hello! I'm <strong>Pratiyush</strong>, an aspiring software developer who enjoys building clean software, solving problems, and continuously learning modern technologies. I enjoy writing efficient code and improving my skills through projects and consistent practice.
+
+</p>
+
+</div>
+
+</section>
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<h2 class="title">
+
+Skills
+
+</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+
+<h3>
+
+Programming Languages
+
+</h3>
+
+<ul>
+
+<li>C++</li>
+
+<li>HTML</li>
+
+<li>CSS</li>
+
+<li>Python</li>
+
+</ul>
+
+</div>
+
+<div class="skill-card">
+
+<h3>
+
+Core Skills
+
+</h3>
+
+<ul>
+
+<li>Data Structures</li>
+
+<li>Algorithms</li>
+
+<li>Object-Oriented Programming</li>
+
+<li>Problem Solving</li>
+
+</ul>
+
+</div>
+
+<div class="skill-card">
+
+<h3>
+
+Tools
+
+</h3>
+
+<ul>
+
+<li>Git</li>
+
+<li>GitHub</li>
+
+<li>Visual Studio</li>
+
+<li>VS Code</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<h2 class="title">
+
+Projects
+
+</h2>
+
+<div class="project-card">
+
+<h3>
+
+🚧 Projects Coming Soon
+
+</h3>
+
+<p>
+
+I'm currently working on projects that I'll soon showcase here. As I continue building my skills, this section will feature my best work.
+
+In the meantime, feel free to explore my GitHub profile and follow my coding journey.
+
+</p>
+
+<div class="buttons" style="justify-content:center;">
+
+<a
+href="https://github.com/Pratiyush379"
+target="_blank"
+class="btn primary">
+
+Visit My GitHub
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<h2 class="title">
+
+Contact
+
+</h2>
+
+<div class="contact-card">
+
+<h3>
+
+Let's Connect
+
+</h3>
+
+<p>
+
+Feel free to reach out if you'd like to connect, collaborate or simply say hello.
+
+</p>
+
+<p>
+
+📞
+
+<a href="tel:9459001140">
+
+9459001140
+
+</a>
+
+</p>
+
+<p>
+
+✉️
+
+<a href="mailto:pratiyushkumar379@gmail.com">
+
+pratiyushkumar379@gmail.com
+
+</a>
+
+</p>
+
+<div class="social">
+
+<a
+href="https://github.com/Pratiyush379"
+target="_blank">
+
+GitHub
+
+</a>
+
+<a
+href="https://www.linkedin.com/in/pratiyush-kumar-b44202390"
+target="_blank">
+
+LinkedIn
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+Made with ❤️ by Pratiyush
+
+</footer>
+
+</body>
+
+</html>
