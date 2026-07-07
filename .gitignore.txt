@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+.vscode/
+
+# Build folders
+Debug/
+Release/
+x64/
+x86/
+
+# CMake
+out/
+
+# Temporary files
+*.obj
+*.o
+*.exe
+*.ilk
+*.pdb
+*.idb
+*.ipch
+*.suo
+*.user
+*.log
+*.tlog
+*.recipe
+*.db
